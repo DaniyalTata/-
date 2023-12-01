@@ -1,56 +1,57 @@
 // Табло
-let levo = document.querySelector('.left');
-let pravo = document.querySelector('.right');
-let mid = document.querySelector('.mid')
+let left_input = document.querySelector('.left');
+let right_input = document.querySelector('.right');
+let middle_mark = document.querySelector('.mid')
 //Функции
-const plus = document.querySelector('.plus');
-const minus = document.querySelector('.minus');
-const umno = document.querySelector('.multiply');
-const delo = document.querySelector('.division');
-const udo = document.querySelector('.clear');
+const plus_button = document.querySelector('.plus');
+const minus_button = document.querySelector('.minus');
+const multiply_button = document.querySelector('.multiply');
+const division_button = document.querySelector('.division');
+const clear_button = document.querySelector('.clear');
 //ответ
-const otvet = document.querySelector('.otvet');
+const result = document.querySelector('.otvet');
 
 
-plus.onclick = () => {
-    let sum = Number(levo.value) + Number(pravo.value);
-    otvet.innerHTML = sum;
-    mid.innerHTML = '+'
+plus_button.onclick = () => {
+    let sum = Number(left_input.value) + Number(right_input.value);
+    result.innerHTML = sum;
+    middle_mark.innerHTML = '+'
 }
 
-minus.onclick = () => {
-    let sum = Number(levo.value) - Number(pravo.value);
-    otvet.innerHTML = sum;
-    mid.innerHTML = '-'
+minus_button.onclick = () => {
+    let sum = Number(left_input.value) - Number(right_input.value);
+    result.innerHTML = sum;
+    middle_mark.innerHTML = '-'
 }
 
-umno.onclick = () => {
-    let sum = Number(levo.value) * Number(pravo.value)
-    otvet.innerHTML = sum
-    mid.innerHTML = '*'
+multiply_button.onclick = () => {
+    let sum = Number(left_input.value) * Number(right_input.value)
+    result.innerHTML = sum
+    middle_mark.innerHTML = '*'
 }
 
-delo.onclick = () => {
-    let sum = Number(levo.value) / Number(pravo.value)
-    otvet.innerHTML = sum;
-    mid.innerHTML = '÷'
+division_button.onclick = () => {
+    let sum = Number(left_input.value) / Number(right_input.value)
+    result.innerHTML = sum;
+    middle_mark.innerHTML = '÷'
 }
 
 //Удаление 
 
-udo.onclick = () => {
-    otvet.innerHTML = '';
-    levo.value = '';
-    pravo.value = '';
+clear_button.onclick = () => {
+    result.innerHTML = '';
+    left_input.value = '';
+    right_input.value = '';
+    middle_mark.innerHTML = '';
 }
 
-//Изменение
+//Изменение цвета
 
-let calc = document.querySelector('.calculator')
-const input = document.querySelector('.input');
+let calculator = document.querySelector('.calculator')
+const color_input = document.querySelector('.input');
 
-input.addEventListener("change", () => {
-    calc.style.backgroundColor = input.value;
+color_input.addEventListener("change", () => {
+    calculator.style.backgroundColor = color_input.value;
 });
 
 
